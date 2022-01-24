@@ -1,0 +1,16 @@
+{
+  "name": "subscribe-sample",
+  "version": "1.0.0",
+  "description": "Example app demoing subscribe in slack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sjiang",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.8.1",
+    "dotenv": "^14.2.0"
+  }
+}
