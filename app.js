@@ -4,8 +4,6 @@
  * validations that aren't implemented for sample purposes but should be implemented for
  * full functionality
  * */
-require('dotenv').config();
-
 const { App, LogLevel, ExpressReceiver } = require('@slack/bolt');
 
 const receiver = new ExpressReceiver({ signingSecret: process.env.SLACK_SIGNING_SECRET });
@@ -48,6 +46,7 @@ const getNotificationView = (resource, viewId, viewOptions) => {
   }
 };
 
+/* Handlers */
 const handleCreate = async ({ body, ack, say, configure }) => {
   // acknowledge the event as an interaction payload
   await ack();
@@ -70,8 +69,6 @@ const handleCreate = async ({ body, ack, say, configure }) => {
 
 const handleConfigure = async ({ body, ack, configure }) => {
   await ack();
-  console.log('ON CONFIGURE', body);
-
   // recommended - validate the user and request
 
   // fetch existing sub from database and get options
@@ -86,23 +83,20 @@ const handleDeleted = async ({ body, ack }) => {
   await ack();
   // Optional code to trigger other processes when a user has deleted their slack subscription
   // Update database write to reflect sub has been deleted
-  console.log('ON DELETE', body);
 };
 
+/* Stub mock external calls */
 const callExternalApi = async ({ payload }) => {
   console.log('CALLING EXT API');
 }
 
-const callExternalApi2 = async ({ payload}) => {
-  console.log('CALLING EXT API 2');
-}
 /* Registration of subscription middlewares includes handler logic for three Slack interaction payloads 
  * 1. A new subscription notification create requested by user 
  * 2. An existing subscription notification updated requested by user
  * 3. User has deleted an existing subscription notification
 */
 app.subscription({
-  onCreate: [handleCreate, callExternalApi, callExternalApi2],
+  onCreate: [handleCreate, callExternalApi],
   onConfigure: handleConfigure,
   onDeleted: handleDeleted,
 });

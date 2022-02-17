@@ -10,7 +10,6 @@
   "author": "sjiang",
   "license": "ISC",
   "dependencies": {
-    "@slack/bolt": "feat-hermes",
-    "dotenv": "^14.2.0"
+    "@slack/bolt": "feat-hermes"
   }
 }
