@@ -1,6 +1,7 @@
 # Sample App: Subscribe in slack
 
-This sample application is built with Bolt JS framework and does a simple demonstration of using the Subscribe in Slack functionality.
+This sample application is built with Bolt JS framework and does a simple demonstration of using the Subscribe in Slack functionality. For a more full-feature sample app, refer to: 
+https://github.com/slack-samples/subscribe-in-slack-and-metadata
 
 #### Setup:
 _prepare your development slack workspace_
