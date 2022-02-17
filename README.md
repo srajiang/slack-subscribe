@@ -14,10 +14,10 @@ _prepare your application_
 4. Create a new Slack app from manifest
 5. Add the following to your environment 
 ```
-export = SLACK_SIGNING_SECRET=<add here>
-export = SLACK_CLIENT_SECRET=<add here>
-export = SLACK_CLIENT_ID=<add here>
-export = SLACK_BOT_TOKEN=<add here>
-export = DOMAIN_VERIFICATION=<add here>
+export=SLACK_SIGNING_SECRET=<add here>
+export=SLACK_CLIENT_SECRET=<add here>
+export=SLACK_CLIENT_ID=<add here>
+export=SLACK_BOT_TOKEN=<add here>
+export=DOMAIN_VERIFICATION=<add here>
 ```
 6. Start the application, `npm start`
