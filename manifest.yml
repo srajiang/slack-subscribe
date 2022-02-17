@@ -1,0 +1,79 @@
+display_information:
+  name: test-app
+  description: a testing application
+  background_color: "#2c2d30"
+  long_description: 
+features:
+  bot_user:
+    display_name: test-app
+    always_online: false
+oauth_config:
+  redirect_urls:
+    - https://<your-domain-here>/oauth_redirect
+  scopes:
+    bot: # all bot scopes / remove as needed
+      - app_mentions:read
+      - bookmarks:read
+      - bookmarks:write
+      - calls:read
+      - calls:write
+      - channels:history
+      - channels:join
+      - channels:manage
+      - channels:read
+      - chat:write
+      - chat:write.customize
+      - chat:write.public
+      - conversations.connect:manage
+      - conversations.connect:read
+      - conversations.connect:write
+      - dnd:read
+      - emoji:read
+      - files:read
+      - files:write
+      - groups:history
+      - groups:read
+      - groups:write
+      - im:history
+      - im:read
+      - im:write
+      - incoming-webhook
+      - links:read
+      - links:write
+      - metadata.message:read
+      - mpim:history
+      - mpim:read
+      - mpim:write
+      - pins:read
+      - pins:write
+      - reactions:read
+      - reactions:write
+      - reminders:read
+      - reminders:write
+      - remote_files:read
+      - remote_files:share
+      - remote_files:write
+      - team.billing:read
+      - team.preferences:read
+      - team:read
+      - usergroups:read
+      - usergroups:write
+      - users.profile:read
+      - users:read
+      - users:read.email
+      - users:write
+      - workflow.steps:execute
+settings:
+  event_subscriptions:
+    request_url: https://<your-domain-here>/slack/events
+    bot_events:
+      - app_mention
+      - message.channels
+      - message.groups
+      - message.im
+  interactivity:
+    is_enabled: true
+    request_url: https://<your-domain-here>/slack/events
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
